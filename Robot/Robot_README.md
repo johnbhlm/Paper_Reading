@@ -1,9 +1,12 @@
-# Robot-Papers
 
+**转载请注明作者和出处：[http://blog.csdn.net/john_bh/](http://blog.csdn.net/john_bh/)** 
 
+<font color='red'>** Robot 论文及代码汇总，持续更新中~~**</font>
+@[toc]
 # 1. Data
 1. [ Open X-Embodiment ](https://robotics-transformer-x.github.io/)
 2.  [RLBench](https://sites.google.com/view/rlbench) --- [Paper](https://arxiv.org/abs/1909.12271) --- [RLBench Code](https://github.com/stepjam/RLBench) 
+3. Towards Diverse Behaviors: A Benchmark for Imitation Learning with Human Demonstrations ---[ICLR 2024](https://arxiv.org/pdf/2402.14606) --- [Project website](https://alrhub.github.io/d3il-website/) --- [Code](https://github.com/ALRhub/d3il)
 
 
 # 2. Metrics
@@ -22,8 +25,7 @@ HDP 将操纵策略分解为层次结构：预测远距离次优末端效应器�
 根据经验，我们表明 HDP 在模拟和现实世界中都比最先进的方法取得了显着更高的成功率。
 Key words: RLBench, 
 2. BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark --- [Paper 2024.07](https://arxiv.org/pdf/2407.07788) --- [ Project Web ](https://chernyadev.github.io/bigym/) --- [Code](https://github.com/chernyadev/bigym)
-	>我们推出 BiGym，这是一种用于移动双手演示驱动的机器人操作的新基准和学习环境。 BiGym 在家庭环境中提供 40 种不同的任务，从简单的目标达成到复杂的厨房清洁。为了准确地捕捉现实世界的表现，我们为每项任务提供了人类收集的演示，反映了现实世界机器人轨迹中发现的多种模式。 BiGym 支持各种观察，包括本体感受数据和视觉输入（例如 RGB）以及来自 3 个摄像机视图的深度。为了验证 BiGym 的可用性，我们在环境中对最先进的模仿学习算法和演示驱动的强化学习算法进行了彻底的基准测试，并讨论了未来的机会。
-	Key words: Manipulation Benchmark, long-horizon task, MuJoCo, Unitree_h1 , Demostration
+	>Key words: Manipulation Benchmark, long-horizon task, MuJoCo, Unitree_h1 , Demostration
 4. RePLan: Robotic Replanning with Perception and Language Models --- [Paper](https://arxiv.org/abs/2401.04157) --- [ Webset ](https://replan-lm.github.io/replan.github.io/)
 	>Motivation:  利用视觉语言模型进行机器人重新规划，可以为 long -horizon 任务提供重新规划能力。
 	大型语言模型（LLM）的进步已经证明了它们在促进高级推理、逻辑推理和机器人规划方面的潜力。最近，LLMs 还能为低级机器人行动生成奖励函数，有效地连接了高级规划与低级机器人控制之间的界面。然而，挑战依然存在，即使制定了语法正确的计划，由于计划不完善或意外环境问题，机器人仍可能无法实现预期目标。
@@ -43,7 +45,7 @@ Key words: RLBench,
 8.  ASGrasp: Generalizable Transparent Object Reconstruction and Grasping from RGB-D Active Stereo Camera --- [ICRA 20224](https://arxiv.org/abs/2405.05648) --- [Project Web](https://pku-epic.github.io/ASGrasp/) --- [Code](https://github.com/jun7-shi/ASGrasp)
 	>Motivation: 探讨了如何抓取透明和镜面物体的问题。这个问题非常重要，但由于深度摄像头无法恢复物体的精确几何形状，因此在机器人领域仍未得到解决。
 	Solution: 作者首次提出了 ASGrasp，一个使用 RGB-D 主动立体摄像机的 6-DoF 抓取检测网络。ASGrasp 利用基于学习的双层立体网络实现透明物体重建，从而在杂乱的环境中抓取与材料无关的物体。现有的基于 RGB-D 的抓取检测方法在很大程度上依赖于深度还原网络和深度摄像头生成的深度图的质量，与之相比，该系统能够直接利用原始红外和 RGB 图像来重建透明物体的几何形状。以 GraspNet-1Billion 为基础，通过域随机化创建了一个广泛的合成数据集。实验证明，ASGrasp 通过从模拟到现实的无缝传输，在模拟和现实中都能实现超过 90% 的通用透明物体抓取成功率。该方法明显优于 SOTA 网络，甚至超过了完美可见点云输入所设定的性能上限。
-9. Towards Diverse Behaviors: A Benchmark for Imitation Learning with Human Demonstrations --- [Paper](https://arxiv.org/abs/2402.14606)
+9. Towards Diverse Behaviors: A Benchmark for Imitation Learning with Human Demonstrations ---[ICLR 2024](https://arxiv.org/pdf/2402.14606) --- [Project website](https://alrhub.github.io/d3il-website/) --- [Code](https://github.com/ALRhub/d3il)
 	>利用人类数据进行模仿学习在教授机器人多种技能方面取得了显着的成功。然而，人类行为固有的多样性导致多模态数据分布的出现，从而对现有的模仿学习算法提出了巨大的挑战。量化模型有效捕获和复制这种多样性的能力仍然是一个悬而未决的问题。在这项工作中，我们介绍了模拟基准环境和相应的具有多种人类模仿学习演示的数据集（D3IL），其明确设计用于评估模型学习多模态行为的能力。我们的环境被设计为涉及需要解决的多个子任务，考虑操纵多个对象，这增加了行为的多样性，并且只能通过依赖闭环感官反馈的策略来解决。其他可用的数据集至少缺少这些具有挑战性的特性之一。为了解决多样性量化的挑战，我们引入了易于处理的指标，这些指标为模型获取和重现多样化行为的能力提供了有价值的见解。这些指标提供了评估模仿学习算法的鲁棒性和多功能性的实用方法。此外，我们对所提出的任务套件的最先进方法进行了彻底的评估。该评估可作为评估他们学习不同行为的能力的基准。我们的研究结果揭示了这些方法在解决捕获和概括多模式人类行为的复杂问题方面的有效性，为未来模仿学习算法的设计提供了有价值的参考
 
 10. Generalize by Touching: Tactile Ensemble Skill Transfer for Robotic Furniture Assembly --- [Paper](https://arxiv.org/abs/2404.17684)
@@ -53,7 +55,14 @@ Key words: RLBench,
 11. THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation --- [ RSS 2024](https://arxiv.org/abs/2402.08191)
 	>为了实现有效的大规模、现实世界的机器人应用，我们必须评估我们的机器人策略如何适应环境条件的变化。不幸的是，大多数研究都是在与训练设置非常相似甚至相同的环境中评估机器人的性能。我们推出了 THE COLOSSEUM，这是一种新颖的模拟基准，具有 20 种不同的操作任务，可以对 14 个环境扰动轴的模型进行系统评估。这些扰动包括物体、桌面和背景的颜色、纹理和大小的变化；我们还改变照明、干扰物、物理属性扰动和相机姿势。使用 THE COLOSSEUM，我们比较了 5 种最先进的操纵模型，结果表明，在这些扰动因素的影响下，它们的成功率下降了 30-50%。当同时应用多个扰动时，成功率降低 ≥75%。我们发现，改变干扰物体的数量、目标物体的颜色或照明条件是最能降低模型性能的扰动。为了验证我们结果的生态有效性，我们表明我们的模拟结果与现实世界实验中的类似扰动相关（R 2 = 0.614）。我们开源代码供其他人使用 THE COLOSSEUM，还发布代码来 3D 打印用于复制现实世界扰动的对象。最终，我们希望 COLOSSEUM 能够成为确定建模决策的基准，从而系统地提高操纵的泛化能力
 
-12. Render and Diffuse: Aligning Image and Action Spaces for Diffusion-based Behaviour Cloning --- [RSS 2024](https://arxiv.org/abs/2405.18196) --- [Project web](https://vv19.github.io/render-and-diffuse/)
+12. Any-point Trajectory Modeling for Policy Learning --- [RSS 2024](https://arxiv.org/abs/2401.00025) --- [Project website]([https://github.com/Large-Trajectory-Model/ATM](https://xingyu-lin.github.io/atm/) --- [Code](https://github.com/Large-Trajectory-Model/ATM)
+	>Motivation: 机器人从 demonstration 中学习新的技能是一种有效的方法，而且拥有更多的演示数据可以改善policy 学习，但是收集 demonstration 数据的高昂成本是一个重大瓶颈。那么机器人能否通过学习视频来解决这个问题呢？因为视频包含行为，物理和语义知识，但是缺乏动作标签，如何解决这个问题呢？
+	>\
+	>Solution: 作者提出一个新的框架发：任意点轨迹模型（Any-point Trajectory Modeling: ATM）,将视频预训练与策略学习联系起来。通过预训练轨迹模型来利用视频演示去预测视频帧任意点的未来轨迹，经过训练后，这些轨迹可以提供详细的控制指导，从而能够使用最少的动作标记数据来学习稳健的视觉运动策略。
+ 	>通过在模拟 benchmarks 和现实世界中大量实验，证明该方法可以在预训练中有效地利用视频数据，并且在模型学习中显著优于各种视频预训练baseline。
+	Key words: policy learning, video demonstration, imitation learning
+
+13. Render and Diffuse: Aligning Image and Action Spaces for Diffusion-based Behaviour Cloning --- [RSS 2024](https://arxiv.org/abs/2405.18196) --- [Project web](https://vv19.github.io/render-and-diffuse/)
 	>在机器人学习领域，高维观察（例如 RGB 图像）和低级机器人动作（两个本质上非常不同的空间）之间的复杂映射构成了复杂的学习问题，尤其是在数据量有限的情况下。在这项工作中，我们引入了渲染和漫反射 (R&D) 方法，该方法使用机器人 3D 模型的虚拟渲染来统一图像空间内的低级机器人动作和 RGB 观察。使用这种联合观察动作表示，它使用学习的扩散过程来计算低级机器人动作，该过程迭代地更新机器人的虚拟渲染。这种空间统一简化了学习问题，并引入了对于样本效率和空间泛化至关重要的归纳偏差。我们在模拟中全面评估了研发的几种变体，并展示了它们在现实世界中六项日常任务中的适用性。我们的结果表明，R&D 表现出强大的空间泛化能力，并且比更常见的图像到动作方法具有更高的样本效率。
 13. LHManip: A Dataset for Long-Horizon Language-Grounded Manipulation Tasks in Cluttered Tabletop Environments --- [RSS 2024](https://arxiv.org/abs/2312.12036) --- [Code](https://github.com/fedeceola/LHManip)
 	>长期以来，指导机器人在家中完成日常任务一直是机器人技术面临的挑战。虽然最近在语言条件模仿学习和离线强化学习方面取得了进展，在广泛的任务中表现出了令人印象深刻的性能，但它们通常仅限于短视距任务，不能反映家用机器人预期完成的任务。虽然现有架构具有学习这些预期行为的潜力，但由于缺乏用于真实机器人系统的必要长视距、多步骤数据集，因此面临着巨大的挑战。为此，我们提出了长视距操纵（LHManip）数据集，该数据集由 200 个事件组成，通过真实机器人远程操作演示了 20 种不同的操纵任务。这些任务包含多个子任务，包括在高度杂乱的环境中抓取、推动、堆叠和投掷物体。每项任务都配有自然语言指令和用于点云或 NeRF 重建的多摄像头视点。该数据集共包含 176,278 对观察-动作，是开放 X-Embodiment 数据集的一部分
@@ -86,15 +95,3 @@ Key words: Long-horizon task, isaac sim, RL，IL, benchmark
 	Key words: Imitation Learning ,
 
 5. Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation --- [Paper 2023.06](https://arxiv.org/abs/2306.17817) --- [Project web](https://act3d.github.io/) --- [Code](https://github.com/zhouxian/act3d-chained-diffuser)
-	>3D 感知表示非常适合机器人操作，因为它们可以轻松编码遮挡并简化空间推理。许多操纵任务在末端执行器姿态预测中需要高空间精度，这通常需要高分辨率的 3D 特征网格，而处理起来的计算成本很高。因此，大多数操纵策略直接在 2D 中运行，而忽略了 3D 归纳偏差。在本文中，我们介绍了 Act3D，这是一种操作策略转换器，它使用 3D 特征场来表示机器人的工作空间，其自适应分辨率取决于手头的任务。该模型使用感测深度将 2D 预训练特征提升为 3D，并利用它们来计算采样 3D 点的特征。它以从粗到细的方式对 3D 点网格进行采样，使用相对位置注意力对其进行特征化，并选择下一轮点采样的聚焦位置。通过这种方式，它可以有效地计算高空间分辨率的 3D 动作图。 Act3D 在 RL-Bench（一个既定的操纵基准）中树立了新的最先进水平，在 74 个 RLBench 任务上，它比之前的 SOTA 2D 多视图策略实现了 10% 的绝对改进，并且在计算量减少 3 倍的情况下实现了 22% 的绝对改进优于之前的 SOTA 3D 政策。我们量化了相对空间注意力、大规模视觉语言预训练的 2D 主干以及烧蚀实验中从粗到细注意力的权重绑定的重要性。
-	Key words: Imitation learning,
-
-
-### 2022
-1. Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation --- [CoRL 2022](https://arxiv.org/abs/2209.05451)  --- [Project website](https://peract.github.io/) --- [Code](https://github.com/peract/peract)
-	>Transformer 凭借其可扩展大型数据集的能力，彻底改变了视觉和自然语言处理。但在机器人操作中，数据既有限又昂贵。通过正确的问题表述，我们还能从 Transformers 中受益吗？
-	>\
-我们使用 PerAct 来研究这个问题，PerAct 是一种用于多任务 6-DoF 操作的语言条件行为克隆代理。 PerAct 使用 Perceiver Transformer 对语言目标和 RGB-D 体素观察进行编码，并通过“检测下一个最佳体素动作”来输出离散动作。与操作 2D 图像的框架不同，体素化观察和动作空间为有效学习 6-DoF 策略提供了强大的结构先验。
-	>\
-通过这个公式，我们通过每个任务的几个演示来训练一个多任务 Transformer，用于 18 个 RLBench（有 249 个变体）和 7 个现实世界任务（有 18 个变体）。我们的结果表明，对于各种桌面任务，PerAct 的性能显着优于非结构化图像到动作代理（34 倍）和 3D ConvNet 基线（2.8 倍）。
-	Keywords: RLBench, Imitation learning
